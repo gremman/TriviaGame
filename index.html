@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Ocean Trivia Game</title>
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css?family=Diplomata" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+  <!-- CSS File -->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css";>
+</head>
+
+<body>
+    <div class = "background">
+            <img id="background" src="assets/images/ocean.jpg">
+    </div>
+ 
+    <div class = "container">
+        <h1>The Ocean Trivia Game!</h1> 
+            <p id="score"><strong></strong></p>
+            <p id="question"><strong></strong></p>
+    </div>
+
+  <script>
+
+    // VARIABLES
+    // ==========================================================================
+
+    // An array of questions for the trivia game.
+    var questions = [
+      { q: "What percentage of the earth does the ocean cover?", a: "60%" },
+      { q: "How does water move around the world?", a: "gravity and wind" },
+      { q: "What type of water is more dense?", a: "polar, cold water" },
+      { q: "What are the main categories of sea life?", a: "swimmers, floaters and creatures on the sea floor" },
+      { q: "What are food are seaweed compounds added to?", a: "beer and ice cream" }
+    ];
+
+    // Game with a score of 0.
+    var score = 0;
+    // Variable to hold the index of current question.
+    var questionIndex = 0;
+
+    // FUNCTIONS
+    // ==============================================================================
+
+    // Function to render questions.
+    function renderQuestion() {
+      // If there are still more questions, render the next one.
+      if (questionIndex <= (questions.length - 1)) {
+        document.querySelector("#question").innerHTML = questions[questionIndex].q;
+      }
+      // If there aren't, render the end game screen.
+      else {
+        document.querySelector("#question").innerHTML = "Game Over!";
+        document.querySelector("#score").innerHTML = "Final Score: " + score + " out of " + questions.length;
+      }
+    }
+
+    // Function that updates the score...
+    function updateScore() {
+      document.querySelector("#score").innerHTML = "Score: " + score;
+    }
+
+
+    // MAIN PROCESS
+    // ==============================================================================
+
+    // Calling functions to start the game.
+    renderQuestion();
+    updateScore();
+
+    // When the user presses a key, it will run the following function...
+    document.onkeyup = function(event) {
+
+      // If there are no more questions, stop the function.
+      if (questionIndex === questions.length) {
+        return;
+      }
+
+      // Determine which key was pressed, make it lowercase, and set it to the userInput variable.
+      var userInput = event.key.toLowerCase();
+
+      // Only run this code if "t" or "f" were pressed.
+      if (userInput === "t" || userInput === "f") {
+
+        // If they guess the correct answer, increase and update score, alert them they got it right.
+        if (userInput === questions[questionIndex].a) {
+          alert("Correct!");
+          score++;
+          updateScore();
+        }
+        // If wrong, alert them they are wrong.
+        else {
+          alert("Wrong!");
+        }
+
+        // Increment the questionIndex variable and call the renderQuestion function.
+        questionIndex++;
+        renderQuestion();
+
+      }
+
+    };
+
+  </script>
+
+</body>
+
+</html>
