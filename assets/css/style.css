@@ -13,8 +13,21 @@
     left: 20%;
     height: 80%;
     width: 60%;
+    text-align: center;
+}
+
+.container2 {
+    position: absolute; 
+    top: 15%;
+    left: 1%;
+    height: 80%;
+    width: 98%;
     border: 3px solid teal;
     text-align: center;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 20px;
+    padding-bottom: 5px;
 }
 
 h1 {
@@ -29,8 +42,57 @@ h1 {
     font-family: 'Acme', sans-serif;
 }
 
-#question {
-    font-size: 28px;
-    color: blue;
+h2 {
+    font-size: 36px;
+    color: rgba(0, 0, 255, 0.815);
     font-family: 'Acme', sans-serif;
+}
+
+#start {
+    border: 3px solid rgb(56, 99, 78);
+    width: 20%;
+    height: 8%;
+    font-family: 'Acme', san-serif;
+    font-size: 18px;
+    background-color: rgb(180, 193, 238);
+}
+
+.answer-button {
+    border: 3px solid rgb(56, 99, 78);
+    width: 50%;
+    float:left;
+    height: 15%;
+    font-family: 'Acme', san-serif;
+    font-size: 24px;
+    background-color: rgb(150, 198, 212);
+    color: darkblue;
+}
+
+#wrong {
+    font-size: 36px;
+    color: rgba(255, 0, 0, 0.699);
+    font-family: 'Acme', sans-serif;
+    font-weight: bold;
+}
+
+#correct {
+    font-size: 36px;
+    color: green;
+    font-family: 'Acme', sans-serif;
+    font-weight: bold;
+}
+
+#right-answer {
+    font-size: 33px;
+    color: lightgreen;
+    font-family: 'Acme', sans-serif;
+    font-weight: bold;
+    background-color: green;
+}
+
+#counter {
+    font-size: 50px;
+    color: purple;
+    font-family: 'Diplomata', cursive;
+    font-weight: bold;
 }
