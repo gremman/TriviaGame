@@ -1,7 +1,7 @@
 #background {
     height: 100%;
     width: 100%;
-    opacity: 0.5;
+    opacity: 0.6;
     filter: alpha(opacity=50);  
     position: absolute;
     z-index: -1;
@@ -28,6 +28,7 @@
     padding-left: 5px;
     padding-top: 20px;
     padding-bottom: 5px;
+    margin-top: 15px;
 }
 
 h1 {
@@ -43,7 +44,7 @@ h1 {
 }
 
 h2 {
-    font-size: 36px;
+    font-size: 35px;
     color: rgba(0, 0, 255, 0.815);
     font-family: 'Acme', sans-serif;
 }
@@ -63,7 +64,7 @@ h2 {
     float:left;
     height: 15%;
     font-family: 'Acme', san-serif;
-    font-size: 24px;
+    font-size: 20px;
     background-color: rgb(150, 198, 212);
     color: darkblue;
 }
@@ -95,6 +96,7 @@ h2 {
     color: purple;
     font-family: 'Diplomata', cursive;
     font-weight: bold;
+    margin-top: 0;
 }
 
 #finish {
@@ -119,4 +121,9 @@ h2 {
     font-family: 'Acme', san-serif;
     font-size: 18px;
     background-color: rgb(180, 193, 238);
+}
+
+.image {
+    width: 75%;
+    height: 50%;
 }

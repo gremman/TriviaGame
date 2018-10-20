@@ -18,17 +18,17 @@ $(document).on("click", "#reset", function() {
     { ques: "What percentage of the earth does the ocean cover?", 
         answers: ["~60%", "~85%", "~50%", "~70%"],
         ca:"~70%",
-        image: "assets/images/earthsurface.gif"
+        image: "assets/images/earthsurface.gif",
     },
     { ques: "How does water move around the world?", 
         answers: ["gravity", "wind", "gravity & wind", "gravity, wind, ice"],
         ca: "gravity & wind",
-        image: "assets/images/gravity.gif"
+        image: "assets/images/gravity.gif",
     },
     { ques: "What type of water is more dense?", 
         answers: ["thermal, hot water", "polar, cold water", "ocean water", "thermal flow"],
         ca: "polar, cold water",
-        image: "assets/images/polar.gif"
+        image: "assets/images/polar.gif",
     },
     { ques: "What are the main categories of sea life?", 
         answers: ["swimmers, floaters, and plankton", "floaters, plankton, and fish", "mammals, fish, and micromaterials", "swimmers, floaters, and creatures on the sea floor"],
@@ -38,7 +38,7 @@ $(document).on("click", "#reset", function() {
     { ques: "What is an example of microscopic seaweed", 
         answers: ["phytoplankton", "algae", "sea vegetables", "kelp"],
         ca: "phytoplankton",
-        image: "assets/images/seaweed.gif"
+        image: "assets/images/seaweed.gif",
     }];
 
     // In the game, need to run it so that the questions are loaded, know what # we're on, log # of in/correct responses, set counter to 30
@@ -64,7 +64,7 @@ $(document).on("click", "#reset", function() {
         // Need to display the question and multiple answers onto the page
         loadQuestion: function() {
             timer = setInterval(rungame.countdown,1000);
-            $(".container2").html("<h3 id='counter'>" + rungame.counter + "</h3>");
+            $(".container2").html("<p id='counter'>" + rungame.counter + "</p>");
             $(".container2").append("<h2>" + questions[rungame.onQuestion].ques+ "</h2>");
             for (var i = 0; i < questions[rungame.onQuestion].answers.length; i++) {
                 $(".container2").append('<button class="answer-button" id="button'+i+'" data-name="'+questions[rungame.onQuestion].answers[i]+'">' + questions[rungame.onQuestion].answers[i]+'</button>');
@@ -82,7 +82,11 @@ $(document).on("click", "#reset", function() {
             clearInterval(timer);
             rungame.unansweredQs++;
             $(".container2").html("<h2>Time's up!");
-            $(".container2").append("<h3>Correct answer = " + questions[rungame.onQuestion].ca+ "</h3>");
+            $(".container2").append("<p id='right-answer'>Right answer = " + questions[rungame.onQuestion].ca+ "</p>");
+            var images = $("<img>");
+            images.attr("src", questions[rungame.onQuestion].image);
+            images.attr("class", "image");
+            $(".container2").append(images);
             if (rungame.onQuestion==questions.length-1){
                 setTimeout(rungame.results,3*1000);
             } else {
@@ -113,6 +117,10 @@ $(document).on("click", "#reset", function() {
             rungame.correctResponse++;
             $(".container2").html("<p id='correct'>Correct!<p>");
             $(".container2").append("<p id='right-answer'>Right answer = " + questions[rungame.onQuestion].ca+ "</p>");
+            var images = $("<img>");
+            images.attr("src", questions[rungame.onQuestion].image);
+            images.attr("class", "image");
+            $(".container2").append(images);
             if (rungame.onQuestion==questions.length-1){
                 setTimeout(rungame.results,3*1000);
             } else {
@@ -125,7 +133,10 @@ $(document).on("click", "#reset", function() {
             rungame.incorrectResponse++;
             $(".container2").html("<p id='wrong'>Wrong answer...<p>");
             $(".container2").append("<p id='right-answer'>Right answer = " + questions[rungame.onQuestion].ca+ "</p>");
-            $(".container2").append("<img>" + questions[rungame.onQuestion].image+ "</img>");
+            var images = $("<img>");
+            images.attr("src", questions[rungame.onQuestion].image);
+            images.attr("class", "image");
+            $(".container2").append(images);
             if (rungame.onQuestion==questions.length-1){
                 setTimeout(rungame.results,3*1000);
             } else {
