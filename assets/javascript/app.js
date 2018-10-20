@@ -146,7 +146,7 @@ $(document).on("click", "#reset", function() {
         reset: function() {
             rungame.onQuestion = 0;
             rungame.counter = 0;
-            rungame.correctrResponse = 0;
+            rungame.correctResponse = 0;
             rungame.incorrectResponse = 0;
             rungame.unansweredQs = 0;
             rungame.loadQuestion();
