@@ -96,3 +96,27 @@ h2 {
     font-family: 'Diplomata', cursive;
     font-weight: bold;
 }
+
+#finish {
+    font-size: 35px;
+    color: orange;
+    font-family: 'Acme', sans-serif;
+    font-weight: bold;
+    background-color: teal;
+}
+
+.results {
+    font-size: 28px;
+    color: rgba(33, 12, 150, 0.733);
+    font-family: 'Acme', sans-serif;
+    font-weight: bold;
+}
+
+#reset {
+    border: 3px solid rgb(56, 99, 78);
+    width: 20%;
+    height: 8%;
+    font-family: 'Acme', san-serif;
+    font-size: 18px;
+    background-color: rgb(180, 193, 238);
+}

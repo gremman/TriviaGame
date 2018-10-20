@@ -92,10 +92,10 @@ $(document).on("click", "#reset", function() {
         
         results: function() {
             clearInterval(timer);
-            $(".container2").html("<h2> You finished! </h2>");
-            $(".container2").append("<h4> Correct: " + rungame.correctResponse + "</h4>");
-            $(".container2").append("<h4> Incorrect: " + rungame.incorrectResponse + "</h4>");
-            $(".container2").append("<h4> Unanswered Questions: " + rungame.unansweredQs + "</h4>");
+            $(".container2").html("<p id='finish'> You finished! </h2>");
+            $(".container2").append("<h4 class='results'> Correct: " + rungame.correctResponse + "</h4>");
+            $(".container2").append("<h4 class='results'> Incorrect: " + rungame.incorrectResponse + "</h4>");
+            $(".container2").append("<h4 class='results'> Unanswered Questions: " + rungame.unansweredQs + "</h4>");
             $(".container2").append("<button id='reset'>Reset Game</button>");
         },
 
@@ -125,7 +125,7 @@ $(document).on("click", "#reset", function() {
             rungame.incorrectResponse++;
             $(".container2").html("<p id='wrong'>Wrong answer...<p>");
             $(".container2").append("<p id='right-answer'>Right answer = " + questions[rungame.onQuestion].ca+ "</p>");
-            $(".container2").append("<p>" + questions[rungame.onQuestion].image+ "</p>");
+            $(".container2").append("<img>" + questions[rungame.onQuestion].image+ "</img>");
             if (rungame.onQuestion==questions.length-1){
                 setTimeout(rungame.results,3*1000);
             } else {
